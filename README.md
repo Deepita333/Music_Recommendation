@@ -67,4 +67,11 @@ while true:
         else:
             print("Please type 'yes' or 'no'")
 ```
-                                                          
+## How actually the model works ?
+1. Feature Engineering: The code combines the "Song Name" and "Artist Name" columns into a single "data" column. This allows the model to consider both song title and artist style when calculating similarities.
+2. Vectorization: The code uses CountVectorizer to convert the text in the "data" column into numerical vectors. Each vector represents a song, where each element corresponds to the frequency of a word in the song title and artist name.
+3. Cosine Similarity: It quantifies how similar two songs are based on their word frequencies. Songs with similar patterns and word usage get higher cosine similarity scores.
+4.  Recommendation Engine: $ The system creates a similarity matrix (DataFrame) representing cosine similarity scores between all song pairs.
+$ When the user provides a song name, the system retrieves its corresponding vector from the matrix.
+$ The system then finds the 10 songs with the highest cosine similarity scores to the user's chosen song, excluding the song itself. These are the recommended songs.
+   
